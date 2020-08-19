@@ -46,9 +46,9 @@
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
             <ul class="navbar-nav">
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#skill">Skills</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#techknowledge">TechKnowledge</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Educação</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portfolio">Portfolio</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Contatos</a></li>
             </ul>
           </div>
@@ -111,7 +111,7 @@
                     Android), páginas Web e começando a compreender mais a fundo as PWAs e Aprendizado de Máquina.
                   </p>
                   <p> Atualmente trabalho na <a href="https://unfoldsoftwaredev.com.br/">Unfold Software
-                      Development</a></p>.
+                      Development.</a></p>
                 </div>
               </div>
               <div class="col-lg-6 col-md-12">
@@ -139,14 +139,71 @@
         </div>
       </div>
 
-      <div class="section" id="skill">
+      <div class="section" id="techknowledge">
         <div class="container">
           <div class="h4 text-center mb-4 title">Tecnologias Dominadas (ou quase)</div>
           <div class="card" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-            <div class="card-body">
-
-              <div id="skill-container"></div>
-
+            <div class="card-body row">
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-html-5" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-javascript" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-php" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-nodejs" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-react" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="cib-mysql" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-mongodb" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-bootstrap" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-firebase" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-gatsby" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="logos-codeigniter" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
+              <div class="col-3 col-md-2 text-center">
+                <span class="iconify my-2" data-icon="cib-adobe-xd" data-inline="false" data-width="48"
+                  data-height="48"></span>
+              </div>
+              
             </div>
           </div>
         </div>
@@ -320,12 +377,19 @@
     <div class="text-center text-muted">
       <p>&copy; Creative CV. All rights reserved.<br>Design - <a class="credit" href="https://templateflip.com"
           target="_blank">TemplateFlip</a></p>
-      <p>Icons &copy; <a class="credit" href="https://jpswalsh.github.io/academicons/" target="_blank">Academicons</a>
+
+      <p>
+        Icons
+        &copy; <a class="credit" href="https://jpswalsh.github.io/academicons/" target="_blank">Academicons</a>
         -
         &copy; <a class="credit" href="https://fontawesome.com/" target="_blank">FontAwesome</a></p>
+      -
+      &copy; <a class="credit" href="https://iconify.design/" target="_blank">iconify.design</a></p>
+
       <p id="year"></p>
     </div>
   </footer>
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
   <script src="./js/core/jquery.3.2.1.min.js"></script>
   <script src="./js/core/popper.min.js"></script>
   <script src="./js/core/bootstrap.min.js"></script>
@@ -340,75 +404,6 @@
 
     document.getElementById('idade').innerHTML = Math.abs(Math.round(diff / 365.25));
     document.getElementById('year').innerHTML = d1.getFullYear()
-
-    let array = [
-      [
-        {
-          "name": "JavaScript (ES6)",
-          "percent": "83"
-        },
-        {
-          "name": "PHP (7)",
-          "percent": "83"
-        }
-      ],
-      [
-        {
-          "name": "React.JS",
-          "percent": "82"
-        },
-        {
-          "name": "React Native",
-          "percent": "82"
-        }
-      ],
-      [
-        {
-          "name": "Node.JS",
-          "percent": "80"
-        },
-        {
-          "name": "Gatsby.JS",
-          "percent": "80"
-        },
-      ],
-      [
-        {
-          "name": "GraphQL",
-          "percent": "75"
-        },
-      ],
-    ]
-
-    array.forEach(element => {
-
-      const target = document.getElementById('skill-container')
-      let toAppend = `
-      <div class="row">
-    <div class="col-md-6">
-        <div class="progress-container progress-primary"><span class="progress-badge">${element[0].name}</span>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                    data-aos-duration="2000" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                    style="width: ${element[0].percent}%;"></div><span
-                    class="progress-value">${element[0].percent}%</span>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-        <div class="progress-container progress-primary"><span class="progress-badge">${element[1].name}</span>
-            <div class="progress">
-                <div class="progress-bar progress-bar-primary" data-aos="progress-full" data-aos-offset="10"
-                    style="width: ${element[1].percent}%;"></div><span
-                    class="progress-value">${element[1].percent}%</span>
-            </div>
-        </div>
-    </div>
-</div>
-      `
-      target.innerHTML = target.innerHTML + toAppend
-    });
-
   </script>
 </body>
 
