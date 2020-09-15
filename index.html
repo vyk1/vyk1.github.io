@@ -362,12 +362,14 @@
     <script src="./js/aos.js"></script>
     <script src="./scripts/main.js"></script>
     <script>
-      var d1 = new Date()
-      var d2 = new Date("1999/03/14")
-      var diff = (d2.getTime() - d1.getTime()) / 1000;
-      diff /= (60 * 60 * 24);
+      // var d1 = new Date()
+      // var d2 = new Date("1999/03/14")
+      // var diff = (-d2.getTime() + d1.getTime()) / 1000;
+      // diff /= (60 * 60 * 24);
+      // console.log(diff)
 
-      document.getElementById('idade').innerHTML = Math.abs(Math.round(diff / 365.25));
+      // document.getElementById('idade').innerHTML = Math.abs(Math.round(diff / 365.25));
+      document.getElementById('idade').innerHTML = 21
       document.getElementById('year').innerHTML = d1.getFullYear()
     </script>
     <script>
