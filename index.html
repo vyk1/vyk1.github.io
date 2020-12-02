@@ -10,7 +10,7 @@
     content="Olá! Meu nome é Victoria e desenvolvo sistemas para diversos propósitos. Seja bem-vind@ >>>" />
   <meta name="author" content="Victoria Botelho Martins">
   <meta name="keywords"
-    content="Victoria Botelho Martins, Desenvolvedora Web, Software, Unfold Software Development, portifolio, Victoria, Botelho, Martins, dev, web dev, fullstack, Sistemas">
+    content="Victoria Botelho Martins, Desenvolvedora Web, Software, Unfold Software Development, portifolio, projetos, sistemas, Victoria, Botelho, Martins, dev, web dev, fullstack, Sistemas">
 
   <title>Portifólio de Victoria Botelho Martins</title>
 
@@ -55,7 +55,7 @@
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Sobre</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#techknowledge">TechKnowledge</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#education">Educação</a></li>
-              <li class="nav-item"><a class="nav-link smooth-scroll" href="#portifolio">Portifolio</a></li>
+              <li class="nav-item"><a class="nav-link smooth-scroll" href="#sistemas">Sistemas</a></li>
               <li class="nav-item"><a class="nav-link smooth-scroll" href="#about">Contatos</a></li>
             </ul>
           </div>
@@ -112,12 +112,14 @@
                 <div class="card-body">
                   <div class="h4 mt-0 title">Sobre</div>
                   <p>Olá! Meu nome é Victoria e desenvolvo sistemas para diversos propósitos.</p>
-                  <p>Sou formada em Sistemas para Internet pelo Instituto Federal Farroupilha.
-                    <a href="#education">Mas você pode saber mais sobre minha formação, clicando aqui.</a>
+                  <p>Sou formada em Sistemas para Internet pelo Instituto Federal Farroupilha e curso o Programa de Pós
+                    Graduação em Ciência da Computação na UFSC.
+                    <a href="#education">Mas você pode saber mais sobre minha Tragetória Educacional, clicando aqui.</a>
                   <p>Atualmente trabalho com a Stack em JavaScript (minha paixão) com aplicativos (principalmente
-                    Android), páginas Web e começando a compreender mais a fundo as PWAs e Aprendizado de Máquina.
+                    Android), páginas Web e me aperfeiçoando na JAMSTACK.
                   </p>
-                  <p> Estou fazendo trabalho voluntário com a <a href="https://tribots.com.br/">Tribots.</a>
+                  <p>
+                    Estou fazendo trabalho voluntário com a <a href="https://tribots.com.br/">Tribots</a>
                     e a APAE de Curitibanos - SC.
                   </p>
                   <p> No presente, trabalho na <a href="https://unfoldsoftwaredev.com.br/">Unfold Software
@@ -128,14 +130,19 @@
               <div class="col-lg-6 col-md-12">
                 <div class="card-body">
                   <div class="h4 mt-0 title">Informações Básicas</div>
+                  <!-- CAKE DAY -->
+                  <div class="row mt-3" id="isCakeDay"></div>
+
                   <div class="row mt-3">
                     <div class="col-sm-4"><strong class="text-uppercase">Idade:</strong></div>
                     <div class="col-sm-8" id="idade"></div>
                   </div>
+
                   <div class="row mt-3">
                     <div class="col-sm-4"><strong class="text-uppercase">Idiomas:</strong></div>
                     <div class="col-sm-8">Português, Inglês</div>
                   </div>
+
                   <div class="row mt-3">
                     <div class="col-sm-4"><strong class="text-uppercase">Contatos Empresariais:</strong></div>
                     <div class="col-sm-8">
@@ -235,7 +242,7 @@
                 <div class="card-body">
                   <div class="h5">Mestrado em Ciência da Computação</div>
                   <p class="category">Universidade Federal de Santa Catarina <i>campus</i> Florianópolis - SC</p>
-                  <p>Em andamento mas empolgada.</p>
+                  <p>Linha de Pesquisa: Computação Paralela e Distribuída.</p>
                 </div>
               </div>
             </div>
@@ -252,8 +259,9 @@
                 <div class="card-body">
                   <div class="h5">Tecnologia em Sistemas Para Internet</div>
                   <p class="category">Instituto Federal Farroupilha <i>campus</i> Panambi - RS</p>
-                  <p>Minha primeira graduação, onde aprendi a programar, a entender demandas, engenharia de
-                    <i>software</i> e a importância de estudar. </p>
+                  <p>Onde aprendi a arquitetura e desenvolvimento de <i>software</i>, escrita
+                    acadêmica e os impactos
+                    dos projetos de Extensão. </p>
                 </div>
               </div>
             </div>
@@ -331,12 +339,10 @@
         </div>
       </div>
 
-      <div class="section" id="portifolio">
+      <div class="section" id="sistemas">
         <div class="container cc-reference text-center">
           <div class="h4 mb-4 text-center title">Sistemas em Produção</div>
-          <div id="pjArr">
-
-          </div>
+          <div id="pjArr"></div>
         </div>
       </div>
 
@@ -380,15 +386,32 @@
     <script src="./js/aos.js"></script>
     <script src="./scripts/main.js"></script>
     <script>
-      // var d1 = new Date()
-      // var d2 = new Date("1999/03/14")
-      // var diff = (-d2.getTime() + d1.getTime()) / 1000;
-      // diff /= (60 * 60 * 24);
-      // console.log(diff)
+      const hoje = new Date()
 
-      // document.getElementById('idade').innerHTML = Math.abs(Math.round(diff / 365.25));
-      document.getElementById('idade').innerHTML = 21
-      document.getElementById('year').innerHTML = d1.getFullYear()
+      let nascimento = "14/03/1999".split("/");
+      let dataNascimento = new Date(parseInt(nascimento[2], 10),
+        parseInt(nascimento[1], 10) - 1,
+        parseInt(nascimento[0], 10));
+
+      let diferenca = hoje.getTime() - dataNascimento.getTime();
+      let idade = new Date(diferenca);
+
+
+      document.getElementById('idade').innerHTML = Math.abs(idade.getUTCFullYear() - 1970)
+      document.getElementById('year').innerHTML = hoje.getFullYear()
+
+      if (hoje.getDate() === 14 && hoje.getMonth() + 1 === 03) {
+
+        document.getElementById('isCakeDay').innerHTML = `
+<div class="col-sm-4"><strong class="text-uppercase">Dia de Bolo</strong></div>
+<div class="col-sm-8">
+Pelo menos para mim <i class="ml-1 fa fa-birthday-cake"></i>
+</div>
+`
+        document.getElementById('isCakeDay').className = "alert alert-info"
+
+      }
+
     </script>
     <script>
       const projetos = [
@@ -421,7 +444,7 @@
           title: 'Jardim Interativo',
           category: 'Sistema do Projeto de Extensão',
           image: './images/jd-un.svg',
-          about: 'Sistema do Projeto de Extensão de mesmo nome (em Andamento)',
+          about: 'Sistema do Projeto de Extensão de mesmo nome',
           site: 'https://jardim-interativo.web.app',
           techs: ['logos-react', 'logos-firebase']
         },
