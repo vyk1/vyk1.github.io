@@ -1,0 +1,91 @@
+[
+    {
+        "title": "ConTech",
+        "category": "Conference registration and submission system",
+        "image": "./images/contech0.png",
+        "about": "Official Paper Submission and Presentation System of the First Scientific and Technological Exhibition of UFSC Curitibanos",
+        "site": "https://contech-cbs.web.app",
+        "techs": [
+            "logos-react",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "Estágio Integrado",
+        "category": "Insitutional Mobile Application",
+        "image": "./images/estagio_int.png",
+        "about": "Insitutional Mobile Application developed for the Master's degree dissertation of Me. Josiana Rita Bazana ",
+        "site": "https://educapes.capes.gov.br/handle/capes/571875",
+        "techs": [
+            "logos-nodejs",
+            "logos-react",
+            "uil-react",
+            "logos-mongodb"
+        ]
+    },
+    {
+        "title": "Grupo MPCP",
+        "category": "News Portal for the Research Group",
+        "image": "./images/gpmpcp.png",
+        "about": "Website with CMS for the Research Group",
+        "site": "https://grupompcp.com",
+        "techs": [
+            "logos-php",
+            "logos-codeigniter",
+            "cib-mysql",
+            "logos-bootstrap"
+        ]
+    },
+    {
+        "title": "Jardim Interativo",
+        "category": "System for the Extension Project",
+        "image": "./images/jd-un.svg",
+        "about": "System for the Extension Project of the same name",
+        "site": "https://jardim-interativo.web.app",
+        "techs": [
+            "logos-react",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "Lar Serviços",
+        "category": "Company's presentation website",
+        "image": "./images/lar.jpg",
+        "about": "Presentation website for the Outsourced Services Company",
+        "site": "https://larservicosterceirizados.com.br",
+        "techs": [
+            "logos-gatsby"
+        ]
+    },
+    {
+        "title": "Natália Ritzmann",
+        "category": "Natália Ritzmann's Portfolio (ft. Tainá Fabro)",
+        "image": "./images/nriz.png",
+        "about": "Natália Ritzmann's Portfolio (ft. Tainá Fabro)",
+        "site": "https://nataliaritzmann.com.br",
+        "techs": [
+            "logos-gatsby",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "PocketLib",
+        "category": "Virtual Page Marker",
+        "image": "./images/pocketLib.png",
+        "about": "Virtual Page Marker with Google Library API integration",
+        "site": "https://pocketlib.netlify.app",
+        "techs": [
+            "logos-react"
+        ]
+    },
+    {
+        "title": "Unfold Software Development",
+        "category": "Company's presentation website",
+        "image": "./images/icons/figure.png",
+        "about": "Presentation website for the Software Company",
+        "site": "https://unfoldsoftwaredev.com.br",
+        "techs": [
+            "logos-gatsby"
+        ]
+    }
+]

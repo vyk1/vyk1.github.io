@@ -1,0 +1,45 @@
+{
+    "about-title": "Sobre",
+    "about-texts": [
+        "Olá! Meu nome é Victoria e desenvolvo sistemas para diversos propósitos.",
+        "Sou formada em Sistemas para Internet pelo Instituto Federal Farroupilha e curso o Programa de PósGraduação em Ciência da Computação na UFSC. <a href='#education'>Mas você pode saber mais sobre minha Tragetória Educacional, clicando aqui.</a>",
+        "Atualmente trabalho com a Stack em JavaScript (minha paixão) com aplicativos (principalmente Android), páginas Web e me aperfeiçoando na JAMSTACK.",
+        "Estou fazendo trabalho voluntário com a <a href='https://tribots.com.br/'>Tribots</a> e a APAE de Curitibanos - SC.",
+        "No presente, trabalho na <a href='https://unfoldsoftwaredev.com.br/'>Unfold Software Development</a>."
+    ],
+    "basic-info-title": "Informações Básicas",
+    "age-title": "Idade:",
+    "lang-text": "Português, Inglês",
+    "phone": "Telefone",
+    "tech-title": "Tecnologias Dominadas (ou quase ...)",
+    "ed-title": "Tragetória Educacional",
+    "post-grad-title": "Pós-graduação",
+    "post-grad-1-title": "Mestrado em Ciência da Computação",
+    "post-grad-1-description": "Universidade Federal de Santa Catarina <i>campus</i> Florianópolis",
+    "post-grad-1-text": "Linha de Pesquisa: Computação Paralela e Distribuída",
+    "grad-title": "Graduação",
+    "grad-1-title": "Tecnologia em Sistemas Para Internet",
+    "grad-1-description": "Instituto Federal Farroupilha <i>campus</i> Panambi - RS",
+    "grad-1-text": "Onde aprendi Arquitetura e Desenvolvimento de <i>software</i>, Escrita Acadêmica e os Impactos dos Projetos de Extensão.",
+    "complementary-ed-title": "Formações Complementares",
+    "ccaa": "Curso de Língua Inglesa Avançado",
+    "sys-title": "Sistemas em Produção",
+    "byClassnames": [
+        {
+            "contact-title": "Contatos"
+        },
+        {
+            "certification": "Certificação"
+        },
+        {
+            "lang-title": "Idiomas"
+        }
+    ],
+    "used-techs": "Tecnologias Utilizadas",
+    "cake-day-title": "Dia de Bolo",
+    "cake-day-text": "Pelo menos para mim",
+    "education-title": "Educação",
+    "systems-title": "Sistemas",
+    "back2Top": "Voltar ao Topo",
+    "copy": "Todos os direitos reservados"
+}

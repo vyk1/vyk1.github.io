@@ -1,0 +1,91 @@
+[
+    {
+        "title": "ConTech",
+        "category": "Sistema de Submissão de Trabalhos",
+        "image": "./images/contech0.png",
+        "about": "Sistema oficial de Submissão e Apresentação de Trabalhos da Primeira Mostra Científica e Tecnológica da UFSC Curitibanos",
+        "site": "https://contech-cbs.web.app",
+        "techs": [
+            "logos-react",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "Estágio Integrado",
+        "category": "Aplicativo Institucional",
+        "image": "./images/estagio_int.png",
+        "about": "Aplicativo Institucional desenvolvido para dissertação de mestrado da Me. Josiana Rita Bazana",
+        "site": "https://educapes.capes.gov.br/handle/capes/571875",
+        "techs": [
+            "logos-nodejs",
+            "logos-react",
+            "uil-react",
+            "logos-mongodb"
+        ]
+    },
+    {
+        "title": "Grupo MPCP",
+        "category": "Portal de Notícias para o Grupo de Pesquisa",
+        "image": "./images/gpmpcp.png",
+        "about": "Website com CMS para o Grupo de Pesquisa em Microrganismos Promotores de Crescimento de Plantas",
+        "site": "https://grupompcp.com",
+        "techs": [
+            "logos-php",
+            "logos-codeigniter",
+            "cib-mysql",
+            "logos-bootstrap"
+        ]
+    },
+    {
+        "title": "Jardim Interativo",
+        "category": "Sistema do Projeto de Extensão",
+        "image": "./images/jd-un.svg",
+        "about": "Sistema do Projeto de Extensão de mesmo nome",
+        "site": "https://jardim-interativo.web.app",
+        "techs": [
+            "logos-react",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "Lar Serviços",
+        "category": "Website de apresentação da Empresa",
+        "image": "./images/lar.jpg",
+        "about": "Website de apresentação da Empresa de Prestação de Serviços Terceirizados Lar",
+        "site": "https://larservicosterceirizados.com.br",
+        "techs": [
+            "logos-gatsby"
+        ]
+    },
+    {
+        "title": "Natália Ritzmann",
+        "category": "Portifólio de Natália Ritzmann (ft. Tainá Fabro)",
+        "image": "./images/nriz.png",
+        "about": "Portifólio de Natália Ritzmann (ft. Tainá Fabro)",
+        "site": "https://nataliaritzmann.com.br",
+        "techs": [
+            "logos-gatsby",
+            "logos-firebase"
+        ]
+    },
+    {
+        "title": "PocketLib",
+        "category": "Marcador de Páginas Virtual",
+        "image": "./images/pocketLib.png",
+        "about": "Marcador de Páginas Virtual com Integração de Biblioteca da Google",
+        "site": "https://pocketlib.netlify.app",
+        "techs": [
+            "logos-react"
+        ]
+    },
+    {
+        "title": "Unfold Software Development",
+        "category": "Website de apresentação da Empresa",
+        "image": "./images/icons/figure.png",
+        "about": "Website de apresentação da Casa de Software",
+        "site": "https://unfoldsoftwaredev.com.br",
+        "techs": [
+            "logos-gatsby"
+        ]
+    }
+]

@@ -1,0 +1,45 @@
+{
+    "about-title": "About",
+    "about-texts": [
+        "Hello, my name is Victoria.",
+        "I have a degree in Internet Systems and currently I am a postgraduate student at UFSC.<a href='#education'> You can check more about my education, clicking here.</a>",
+        "I work with JavaScript Stack, developing mobile apps and web pages. Also, I have been working with JAMSTACK.",
+        "I am a volunteer at <a href=\"https://tribots.com.br/\">Tribots</a> and at APAE Curitibanos - SC.",
+        "And probably in this exact moment, I am working at <a href=\"https://unfoldsoftwaredev.com.br/\">Unfold Software Development</a>."
+    ],
+    "basic-info-title": "Basic Informations",
+    "age-title": "Age:",
+    "lang-text": "Brazilian Portuguese, English",
+    "phone": "Phone",
+    "tech-title": "Dominated Technologies (or almost that ...)",
+    "ed-title": "Academic Background",
+    "post-grad-title": "Post-graduation",
+    "post-grad-1-title": "Masters in Computer Science",
+    "post-grad-1-description": "Federal University of Santa Catarina <i>campus</i> Florianópolis",
+    "post-grad-1-text": "Line of Research: Parallel and Distributed Computing",
+    "grad-title": "Graduation",
+    "grad-1-title": "Bachelor's degree in Internet Systems Tecnology",
+    "grad-1-description": "Federal Institute Farroupilha <i>campus</i> Panambi - RS",
+    "grad-1-text": "Where I learnt Software Development, Academic Writing and the Impact of Extension Projects.",
+    "complementary-ed-title": "Complementary Training",
+    "ccaa": "Advanced level English course",
+    "sys-title": "Systems in Production",
+    "byClassnames": [
+        {
+            "contact-title": "Contacts"
+        },
+        {
+            "certification": "Certification"
+        },
+        {
+            "lang-title": "Languages"
+        }
+    ],
+    "used-techs": "Used Technologies in this Project",
+    "cake-day-title": "Cake Day",
+    "cake-day-text": "At least for me",
+    "education-title": "Education",
+    "systems-title": "Systems",
+    "back2Top": "Back to Top",
+    "copy": "All rights reserved"
+}
