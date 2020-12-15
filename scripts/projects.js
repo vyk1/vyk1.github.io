@@ -2,8 +2,10 @@ function getProjects() {
   let stored = localStorage.getItem('language')
 
   if (!stored) {
+    localStorage.setItem('language', 'pt')
     stored = 'pt'
   }
+
   fetch('/languages/projects-' + stored + '.json')
     .then(data => data.json()
       .then(projetos => {

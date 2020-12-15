@@ -2,8 +2,10 @@ function getLanguage() {
     let stored = localStorage.getItem('language')
 
     if (!stored) {
+        localStorage.setItem('language', 'pt')
         stored = 'pt'
     }
+
     fetch('/languages/' + stored + '.json')
         .then(data => data.json()
             .then(json => {
