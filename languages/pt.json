@@ -2,7 +2,7 @@
     "about-title": "Sobre",
     "about-texts": [
         "Olá! Meu nome é Victoria e desenvolvo sistemas para diversos propósitos.",
-        "Sou formada em Sistemas para Internet pelo Instituto Federal Farroupilha e curso o Programa de PósGraduação em Ciência da Computação na UFSC. <a href='#education'>Mas você pode saber mais sobre minha Trajetória Educacional, clicando aqui.</a>",
+        "Sou formada em Sistemas para Internet pelo Instituto Federal Farroupilha e curso o Programa de Pós-Graduação em Ciência da Computação na UFSC. <a href='#education'>Mas você pode saber mais sobre minha Trajetória Educacional, clicando aqui.</a>",
         "Atualmente trabalho com a Stack em JavaScript (minha paixão) com aplicativos (principalmente Android), páginas Web e me aperfeiçoando na JAMSTACK.",
         "Estou fazendo trabalho voluntário com a <a href='https://tribots.com.br/'>Tribots</a> e a APAE de Curitibanos - SC.",
         "No presente, trabalho na <a href='https://unfoldsoftwaredev.com.br/'>Unfold Software Development</a>."
@@ -13,7 +13,7 @@
     "phone": "Telefone",
     "tech-title": "Tecnologias Dominadas (ou quase ...)",
     "ed-title": "Trajetória Educacional",
-    "post-grad-title": "Pós-graduação",
+    "post-grad-title": "Pós-Graduação",
     "post-grad-1-title": "Mestrado em Ciência da Computação",
     "post-grad-1-description": "Universidade Federal de Santa Catarina <i>campus</i> Florianópolis",
     "post-grad-1-text": "Linha de Pesquisa: Computação Paralela e Distribuída",
