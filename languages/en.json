@@ -1,11 +1,10 @@
 {
     "about-title": "About",
     "about-texts": [
-        "Hello, my name is Victoria.",
+        "Oi there, I am Victoria.",
         "I have a degree in Internet Systems and currently I am a MSc student at <abbr title='Federal University of Santa Catarina'>UFSC</abbr>.<a href='#education'> You can check more about my education, clicking here.</a>",
-        "I work with JavaScript Stack, developing mobile apps and web pages. Also, I have been working with JAMSTACK.",
-        "I am a volunteer at <a href=\"https://tribots.com.br/\">Tribots</a> and at APAE Curitibanos - SC.",
-        "And probably in this exact moment, I am working at <a href=\"https://unfoldsoftwaredev.com.br/\">Unfold Software Development</a>."
+        "I work with JavaScript Stack, developing mobile apps and web pages.",
+        "I am a volunteer at <a href=\"https://tribots.com.br/\">Tribots</a> and at APAE Curitibanos - SC."
     ],
     "basic-info-title": "Basic Informations",
     "age-title": "Age:",
@@ -22,7 +21,7 @@
     "grad-1-description": "Federal Institute Farroupilha (IFFar) <i>campus</i> Panambi - RS",
     "grad-1-text": "Where I learnt Software Development, Academic Writing and the Impact of Extension Projects.",
     "complementary-ed-title": "Complementary Training",
-    "ccaa": "Advanced level English course",
+    "ccaa": "Advanced Level English course",
     "sys-title": "Systems in Production",
     "byClassnames": [
         {
