@@ -43,7 +43,7 @@ function getProjects() {
                       ${imgCard}
                       <h5 class="mt-2" id="about-title"></h5>
                       <p>${el.about}</p>
-                      <h5>Site: </h5> <h5><a href="${el.site}" target="_blank" class="fa fa-link"></a></h5>
+                      <h5>Site: </h5> <h5><a href="${el.site}" target="_blank" rel="noreferrer" class="fa fa-link"></a></h5>
                   <h5 class="mt-2" id="used-techs"></h5>
                     ${el.techs.map((t, i) => `<span key=${i} class="iconify my-2 mx-1" data-icon="${t}" data-inline="false" data-width="50" data-height="50"></span>`).join('')}
                     </div >
