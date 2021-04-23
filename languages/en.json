@@ -2,9 +2,9 @@
     "about-title": "About",
     "about-texts": [
         "Oi there, I am Victoria.",
-        "I have a degree in Internet Systems and currently I am a MSc student at <abbr title='Federal University of Santa Catarina'>UFSC</abbr>.<a href='#education'> You can check more about my education, clicking here.</a>",
-        "I work with JavaScript Stack, developing mobile apps and web pages.",
-        "I am a volunteer at <a href=\"https://tribots.com.br/\">Tribots</a> and at APAE Curitibanos - SC."
+        "I have a degree in Internet Systems and currently I am a MSc student at <abbr title='Federal University of Santa Catarina'>UFSC</abbr>.<a href='#education'> You can check more about my education, clicking here</a>.",
+        "I am a Web Developer with JavaScript as passion.",
+        "Currently, I work with the <a href='https://portal.saas.ufsc.br/'>SAAS</a> development team."
     ],
     "basic-info-title": "Basic Informations",
     "age-title": "Age:",
