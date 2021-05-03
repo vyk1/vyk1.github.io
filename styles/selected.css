@@ -1,6 +1,0 @@
-  .selected::before {
-    content: '>';
-  }
-  .selected::after {
-    content: ' <';
-  }
