@@ -1,5 +1,6 @@
 import React from 'react'
 import 'academicons'
+import Translate from './Translate'
 
 const Footer = (props) => (
     <footer id="footer">
@@ -26,6 +27,9 @@ const Footer = (props) => (
                     <a href="#top">
                         <i className="fa fa-arrow-up"></i>
                     </a>
+                </li>
+                <li>
+                    <Translate />
                 </li>
             </ul>
         </section>
