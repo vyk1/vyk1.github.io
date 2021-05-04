@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-html5up-stellar",
-  "description": "Gatsby Starter - Stellar by HTML5 UP",
+  "name": "Portifolio de VBM",
+  "description": "Portifolio de Victoria Botelho Martins",
   "version": "1.0.0",
-  "author": "Hunter Chang",
+  "author": "Victoria Botelho Martins",
   "dependencies": {
     "academicons": "^1.8.6",
     "flag-icon-css": "^3.5.0",

@@ -22,8 +22,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'Portifólio de Victoria Botelho Martins',
+        short_name: 'Portifólio de Victoria Botelho Martins',
         start_url: '/',
         background_color: '#3e58a6',
         theme_color: '#3e58a6',
