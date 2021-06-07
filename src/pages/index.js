@@ -41,7 +41,7 @@ class Index extends React.Component {
             {intl.formatMessage({ id: "index-title" })}
           </title>
           <meta name="robots" content="index, follow" />
-          <meta name="description" content="Olá! Meu nome é Victoria e desenvolvo sistemas para diversos propósitos. Seja bem-vind@ →" />
+          <meta name="description" content={intl.formatMessage({ id: "description" })} />
           <meta name="author" content="Victoria Botelho Martins" />
           <meta name="keywords" content="Victoria Botelho Martins, Desenvolvedora Web, Software, Unfold Software Development, portifolio, projetos, sistemas, Victoria, Botelho, Martins, dev, web dev, fullstack, Sistemas" />
           <meta name="image" content={vbm} />
