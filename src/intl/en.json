@@ -1,0 +1,125 @@
+{
+    "description": "Hello, my name is Victoria and I am a web developer. Welcome →",
+    "404-title": "Code 404: Not Found",
+    "404-credits": "Credits to Ian Gloude",
+    "404-description1": "A wild 404 page appears.",
+    "404-description2": "This means the page you requested does not exist.",
+    "404-goBack": "Go back to a safe place",
+    "index-title": "Home | Victoria Botelho Martins' Portfolio",
+    "about-title": "About",
+    "visit": "Access",
+    "about-text": "Oi there, this is Victoria. I have a degree in Internet Systems and currently I am a MSc student at the Federal University of Santa Catarina. I am a Web Developer with JavaScript as passion. Currently, I work with the SAAS development team.",
+    "basic-info-title": "Basic Informations",
+    "age-title": "Age:",
+    "lang-text": "Brazilian Portuguese, English",
+    "phone": "Phone",
+    "tech-title": "Dominated Technologies (or almost that ...)",
+    "ed-title": "Academic Background",
+    "post-grad-title": "Post-Graduation",
+    "post-grad-1-title": "MSc in Computer Science",
+    "post-grad-1-description": "Federal University of Santa Catarina (UFSC) Florianópolis",
+    "post-grad-1-text": "Line of Research: Parallel and Distributed Computing",
+    "grad-title": "Graduation",
+    "grad-1-title": "College degree in Internet Systems",
+    "grad-1-description": "Federal Institute Farroupilha (IFFar) Panambi - RS",
+    "grad-1-text": "Where I learnt Software Development, Academic Writing and the Impact of Extension Projects.",
+    "complementary-ed-title": "Complementary Training",
+    "english-course-title": "Advanced Level English course",
+    "sys-title": "Systems in Production",
+    "certification-title": "Certifications",
+    "byClassnames": [
+        {
+            "contact-title": "Contacts"
+        },
+        {
+            "lang-title": "Languages"
+        }
+    ],
+    "used-techs": "Used Technologies in this Project",
+    "cake-day-title": "Cake Day",
+    "cake-day-text": "At least for me",
+    "education-title": "Education",
+    "systems-title": "Systems",
+    "back2Top": "Back to Top",
+    "skip-to-content": "Skip to content",
+    "copy": "All rights reserved",
+    "contech": {
+        "title": "ConTech",
+        "category": "Conference submission and presentation system",
+        "about": "Official Paper Submission and Presentation System of the First Scientific and Technological Exhibition of UFSC Curitibanos",
+        "site": "https://contech-cbs.web.app",
+        "t1": "logos-react",
+        "t2": "logos-firebase"
+    },
+    "ei": {
+        "title": "Estágio Integrado",
+        "category": "Insitutional Mobile Application",
+        "about": "Insitutional Mobile Application developed for the Master's degree dissertation of Me. Josiana Rita Bazana ",
+        "site": "https://educapes.capes.gov.br/handle/capes/571875",
+        "t1": "logos-nodejs",
+        "t2": "logos-react",
+        "t3": "uil-react",
+        "t4": "logos-mongodb"
+    },
+    "gpmpcp": {
+        "title": "Grupo MPCP",
+        "category": "News Portal for the Research Group",
+        "about": "Website with CMS for the Research Group",
+        "site": "https://grupompcp.com.br",
+        "t1": "logos-php",
+        "t2": "logos-codeigniter",
+        "t3": "cib-mysql",
+        "t4": "logos-bootstrap"
+    },
+    "jd": {
+        "title": "Jardim Interativo",
+        "category": "System for the Extension Project",
+        "about": "System for the Extension Project of the same name",
+        "site": "https://jardim-interativo.web.app",
+        "t1": "logos-react",
+        "t2": "logos-firebase"
+    },
+    "lar": {
+        "title": "Lar Serviços",
+        "category": "Company's presentation website",
+        "about": "Presentation website for the Outsourced Services Company",
+        "site": "https://larservicosterceirizados.com.br",
+        "t1": "logos-gatsby"
+    },
+    "nritz": {
+        "title": "Natália Ritzmann",
+        "category": "Natália Ritzmann's Portfolio (designed by Tainá Fabro)",
+        "about": "Natália Ritzmann's Portfolio (designed by Tainá Fabro)",
+        "site": "https://nataliaritzmann.com.br",
+        "t1": "logos-gatsby",
+        "t2": "logos-firebase"
+    },
+    "plib": {
+        "title": "PocketLib",
+        "category": "Virtual Page Marker",
+        "about": "Virtual Page Marker with Google Library API integration",
+        "site": "https://pocketlib.netlify.app",
+        "t1": "logos-react"
+    },
+    "unfold": {
+        "title": "Unfold Software Development",
+        "category": "Company's presentation website",
+        "about": "Presentation website for the Software Company",
+        "site": "https://unfoldsoftwaredev.com.br",
+        "t1": "logos-gatsby"
+    },
+    "vacinacao_covid": {
+        "title": "Covid-19 Vaccination Newsletter",
+        "category": "A 'fighting fake news with information' website",
+        "about": "Informational website to fight fake news about Covid-19 vaccination with information (Alexandre Magno Zimerer, William Manzoli and I)",
+        "site": "https://vacinacaocovid.com.br",
+        "t1": "logos:vue"
+    },
+    "saas": {
+        "title": "Course Monitoring and Evaluation System",
+        "category": "Course Monitoring and Evaluation System with the purpose of being a support tool for the management and teaching of the institutions that are part of the Brazilian e-Tec Network (Various people and I)",
+        "about": "Course Monitoring and Evaluation System with the purpose of being a support tool for the management and teaching of the institutions that are part of the Brazilian e-Tec Network (Various people and I)",
+        "site": "https://portal.saas.ufsc.br",
+        "t1": "logos:java"
+    }
+}

@@ -1,0 +1,13 @@
+{
+<<<<<<< HEAD
+  "endOfLine": "lf",
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "trailingComma": "es5"
+=======
+  "trailingComma": "es5",
+  "semi": false,
+  "singleQuote": true
+>>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
+}
