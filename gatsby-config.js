@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // eslint-disable-next-line import/no-extraneous-dependencies
 // require('dotenv').config({
 //     path: `.env.${process.env.NODE_ENV}`,
@@ -76,44 +75,3 @@ module.exports = {
         },
     ],
 };
-=======
-module.exports = {
-  pathPrefix: "/",
-  siteMetadata: {
-    title: 'Portfólio de Victoria Botelho Martins',
-    description: `Portfólio de Victoria Botelho Martins`,
-    author: `@vyk1`,
-    siteUrl: `https://vyk1.github.io/`,
-  },
-  plugins: [
-    {
-      resolve: `gatsby-plugin-intl`,
-      options: {
-        // language JSON resource path
-        path: `${__dirname}/src/intl`,
-        // supported language
-        languages: [`en`, `pt`],
-        // language file path
-        defaultLanguage: `pt`,
-        redirect: false,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: 'Portfólio de Victoria Botelho Martins',
-        short_name: 'Portfólio de Victoria Botelho Martins',
-        start_url: '/',
-        background_color: '#3e58a6',
-        theme_color: '#3e58a6',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/projects/unfold.png', // This path is relative to the root of the site.
-      },
-    },
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-offline'
-  ],
-}
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5

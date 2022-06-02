@@ -1,16 +1,8 @@
 import React from 'react'
-<<<<<<< HEAD
 
 const NotFoundPage = () => (
     <div dangerouslySetInnerHTML={{
         __html: `
-=======
-import { useIntl } from 'gatsby-plugin-intl';
-
-const NotFoundPage = () => (
-  <div dangerouslySetInnerHTML={{
-    __html: `
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
     <!DOCTYPE html>
     <html>
     <head>
@@ -97,38 +89,21 @@ const NotFoundPage = () => (
     <body>
     <div class="container">
     <span class="title">
-<<<<<<< HEAD
       404: Not found
     </span>
     <p>
         A wild 404 page appears.
         <br />
         This means the page you requested does not exist.
-=======
-      ${useIntl().formatMessage({ id: "404-title" })}
-    </span>
-    <p>
-        ${useIntl().formatMessage({ id: "404-description1" })}
-        <br />
-        ${useIntl().formatMessage({ id: "404-description2" })}
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
         <br />
         <br />
     </p>
     <a href="/" class="title">
-<<<<<<< HEAD
         Go back to a safe place
     </a>
     <footer>
         <span>
             Credits to Ian Gloude
-=======
-    ${useIntl().formatMessage({ id: "404-goBack" })}
-    </a>
-    <footer>
-        <span>
-            ${useIntl().formatMessage({ id: "404-credits" })}
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
         </span>
     </footer>
 </div>
@@ -137,11 +112,7 @@ const NotFoundPage = () => (
     </html>
     
     `
-<<<<<<< HEAD
     }} />
-=======
-  }} />
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
 )
 
 export default NotFoundPage

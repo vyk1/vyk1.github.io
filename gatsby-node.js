@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const path = require('path');
 
 exports.createPages = async ({ graphql, actions }) => {
@@ -94,12 +93,3 @@ exports.createPages = async ({ graphql, actions }) => {
         });
     });
 };
-=======
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
->>>>>>> 2d3c98363588059a05c8e4b9f60489cb6ce308b5
