@@ -1,0 +1,3 @@
+User-agent: *
+
+sitemap: https://vyk1.github.io/sitemap-index.xml

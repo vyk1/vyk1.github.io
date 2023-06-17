@@ -1,0 +1,35 @@
+import {QueryProjects} from '../../../hooks/query'
+import {Link} from 'gatsby'
+
+export default () => {
+  
+  const allProjects = QueryProjects()
+
+  const {nodes} = allProjects
+
+  return (
+  <div>
+  <title>Portfolio de Victoria Botelho Martins</title>
+
+<Text
+  children={`👋🏿`}
+  sx={{ fontSize: [4, 5, 6], fontWeight: `bold`, color: `heading` }}
+/>
+
+<Title text="I'm Victoria or just @vyk, a programmer and Master of Science in Computer Science living in Brazil."/>
+
+    <Title text="Projects"/>
+    <div>
+  {
+    nodes.map((project) => (
+      <div key={project.frontmatter.title}>
+    <Link to={project.frontmatter.slug}>
+      <h5>{project.frontmatter.title}</h5>
+      </Link>
+      </div>
+      ))
+  }
+  </div>
+  </div>
+)
+}
