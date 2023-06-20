@@ -8,7 +8,7 @@ const config: GatsbyConfig = {
     // You can overwrite values here that are used for the SEO component
     // You can also add new values here to query them like usual
     // See all options: https://github.com/LekoArts/gatsby-themes/blob/main/themes/gatsby-theme-minimal-blog/gatsby-config.mjs
-    siteTitle: `Victoria Botelho Martins' Portifólio - @vyk1`,
+    siteTitle: `Victoria Botelho Martins' Portfolio`,
     siteTitleAlt: `Victoria Botelho Martins`,
     siteHeadline: `Victoria Botelho Martins`,
     siteUrl: `https://vyk1.github.io/`,
@@ -39,8 +39,8 @@ const config: GatsbyConfig = {
             url: `https://github.com/vyk1`,
           },
           {
-            name: `Homepage`,
-            url: `https://vyk1.github.io/`,
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/in/vyk1`,
           },
         ],
       },

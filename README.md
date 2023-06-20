@@ -238,14 +238,7 @@ type:
 slug: 
 ---
 
-## Table of contents
 
-- [About](#about)
-- [Link](#link)
-- [Status](#status)
-- [Authors](#authors)
-- [Thanks](#thanks)
-- [Copyright and license](#copyright-and-license)
 
 ![Logo](./logo.png)
 
