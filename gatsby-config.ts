@@ -60,7 +60,7 @@ const config: GatsbyConfig = {
         background_color: '#3e58a6',
         theme_color: '#3e58a6',
         display: 'minimal-ui',
-        icon: 'src/assets/usd.png',
+        icon: 'static/usd.png',
       },
     },
     {
