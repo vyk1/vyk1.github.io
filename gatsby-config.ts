@@ -42,6 +42,10 @@ const config: GatsbyConfig = {
             name: `LinkedIn`,
             url: `https://www.linkedin.com/in/vyk1`,
           },
+          {
+            name: `Lattes`,
+            url: `http://lattes.cnpq.br/6294297168242307`,
+          },
         ],
       },
     },
