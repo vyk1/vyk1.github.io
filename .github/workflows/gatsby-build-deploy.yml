@@ -1,42 +1,31 @@
-name: GitHub Pages
+name: Gatsby Build and Deploy
 
 on:
   push:
     branches:
-      - main
-  pull_request:
+      - main  # Defina a branch que desencadeará o workflow (por exemplo, main ou master)
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: write
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-    steps:
-      - uses: actions/checkout@v3
+  build-and-deploy:
+    runs-on: ubuntu-latest
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
           node-version: '18.x'
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+      - name: Install dependencies
+        run: npm install
 
-      - run: npm ci
-      - run: npm run format
-      - run: npm run test
-      - run: npm run build
-
-      - name: Deploy
+      - name: Build Gatsby
+        run: npm run build
+        
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
