@@ -9,10 +9,10 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "gatsby clean && gatsby build --prefix-paths && gh-pages -d public",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
