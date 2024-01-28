@@ -5,6 +5,14 @@ export default () => {
   
   const allProjects = QueryProjects()
 
+    const [data, setData] = React.useState({})
+
+    React.useEffect(() => {
+        fetch('https://raw.githubusercontent.com/vyk1/vyk1/master/info.json')
+        .then(res => res.json())
+        .then(data => setData(data))
+    }, [])
+
   const {nodes} = allProjects
 
   return (
@@ -19,7 +27,7 @@ export default () => {
 <Title text="I'm Victoria or just @vyk1, a programmer and Master of Science in Computer Science living in Brazil."/>
 
     <Title text="Projects"/>
-    <div>
+    
   {
     nodes.map((project) => (
       <div key={project.frontmatter.title}>
@@ -29,7 +37,19 @@ export default () => {
       </div>
       ))
   }
-  </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+      <Title text="Publis" />
+        <div className="publis">
+            {data?.publications?.map((publi, index) => (
+                <div className="publi" key={index}>
+                    <a href={publi.link} target="_blank" rel="noopener noreferrer"><h5>{publi.title}</h5></a>
+                </div>
+            ))}
+        </div>
   </div>
 )
 }
