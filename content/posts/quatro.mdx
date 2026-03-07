@@ -1,0 +1,304 @@
+---
+title: Runbook: Media Server with Samba + Transmission + Jellyfin
+date: 2023-08-04
+tags:
+  - Prototypes
+  - UI
+
+
+---
+
+The year is 2026, I still don't feel like I know a thing about IT and decided to study how streaming actualy works just so I can be more confused working with IT.
+Cool.
+
+So, the goal is to set a homelab for the reproduction of a local network media server environment with file sharing via Samba, downloading via Transmission, and streaming via Jellyfin with NVIDIA GPU acceleration.
+
+## Prerequisites
+
+- Ubuntu Server (22.04 or later)
+- Dedicated NVIDIA GPU or not
+- Docker and Docker Compose installed
+- User with sudo permission
+
+## Proposal
+
+- Native Samba
+- Dockerized Jellyfin 
+- Dockerized Transmission 
+
+---
+
+## 1. Samba (native service)
+
+### Installation
+
+```bash
+sudo apt update
+sudo apt install -y samba
+```
+
+### Configuration
+
+Edit `/etc/samba/smb.conf` and add the share at the end:
+
+```ini
+[media]
+   path = /path/to/your/files
+   browseable = yes
+   read only = no
+   guest ok = yes
+```
+
+### Create directory and permissions
+
+```bash
+sudo mkdir -p /path/to/your/files
+sudo chmod 777 /path/to/your/files
+```
+
+### Enable and start
+
+```bash
+sudo systemctl enable smbd
+sudo systemctl start smbd
+```
+
+### Verify
+
+```bash
+sudo systemctl status smbd
+testparm  # validates configuration without syntax errors
+```
+
+---
+
+## 2. Docker and Docker Compose
+
+### Installation
+
+```bash
+# Remove old versions if present
+sudo apt remove -y docker docker-engine docker.io containerd runc
+
+# Dependencies
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg lsb-release
+
+# Official Docker repository
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+  | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] \
+https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+  | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# Install Docker Engine + Compose
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+### Run Docker without sudo (optional, requires logout/login)
+
+```bash
+sudo usermod -aG docker $USER
+newgrp docker
+```
+
+### Verify
+
+```bash
+docker --version
+docker compose version
+docker run --rm hello-world  # should print success message
+```
+
+---
+
+## 3. NVIDIA Container Toolkit
+
+Required for Docker containers to access the host GPU, if present.
+
+### Installation
+
+```bash
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey \
+  | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list \
+  | sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
+  | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+sudo apt update && sudo apt install -y nvidia-container-toolkit
+
+sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+```
+
+### Verify
+
+```bash
+nvidia-smi  # should show the GPU on the host
+docker run --rm --gpus all ubuntu nvidia-smi  # should show the GPU inside the container
+```
+
+---
+
+## 4. Docker Compose (Transmission + Jellyfin)
+
+Create the directory structure:
+
+```bash
+mkdir -p ~/mediaserver
+cd ~/mediaserver
+mkdir -p jellyfin/config jellyfin/cache
+mkdir -p transmission/config transmission/downloads
+```
+
+Create the `docker-compose.yml` file:
+
+```yaml
+services:
+
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Sao_Paulo
+    volumes:
+      - ./transmission/config:/config
+      - ./transmission/downloads:/downloads
+      - /path/to/your/files:/watch  # monitored folder for .torrent files
+    ports:
+      - 9091:9091   # Web UI
+      - 51413:51413 # TCP peer port
+      - 51413:51413/udp
+    restart: unless-stopped
+
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: host  # required for DLNA/SSDP to work on local network
+    volumes:
+      - ./jellyfin/config:/config
+      - ./jellyfin/cache:/cache
+      - /path/to/your/files:/media:ro
+    restart: unless-stopped
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://SERVER_IP:8096
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu, video]  # enables NVENC/NVDEC
+```
+
+> **Note:** replace `/path/to/your/files` and `SERVER_IP` with actual values.
+
+### Start the containers
+
+```bash
+docker compose up -d
+```
+
+### Verify
+
+```bash
+docker ps                  # both should be "Up"
+docker logs jellyfin       # no critical errors
+docker logs transmission   # no critical errors
+hostname - I               # prints the IP
+```
+
+---
+
+## 5. Jellyfin Configuration
+
+### Initial access
+
+Open `http://SERVER_IP:8096` in the browser and follow the wizard:
+
+1. Create admin user
+2. Add library → point to `/media` (or subfolders like `/media/movies`, `/media/series`)
+3. Wait for the media scan to complete
+4. If you need to find the IP, `hostname -I` will show it
+
+### Enable GPU acceleration
+
+```
+Dashboard → Settings → Playback → Transcoding
+
+Hardware acceleration: NVENC
+Enable hardware decoding: ✓ H264, HEVC, VP9, AV1
+```
+
+### Verify GPU usage during playback
+
+```bash
+docker exec jellyfin nvidia-smi
+# jellyfin process should appear consuming video memory during an active stream
+```
+
+---
+
+## 6. TV Clients
+
+### Roku
+
+1. Roku Channel Store → search **Jellyfin** → install
+2. Add Server → `http://SERVER_IP:8096`
+3. Log in with the created user
+
+### LG webOS (23+)
+
+**Option A — App:**
+1. LG Content Store → search **Jellyfin** → install
+2. Add Server → `http://SERVER_IP:8096`
+
+---
+
+## 7. Quick Diagnostics
+
+| Problem | Command |
+|---|---|
+| Samba not responding | `sudo systemctl status smbd` |
+| Jellyfin not opening in browser | `docker logs jellyfin` |
+| TV not finding the server | check `network_mode: host` in compose |
+| GPU not used in transcoding | `docker exec jellyfin nvidia-smi` during playback |
+| File codec | `ffprobe -v quiet -print_format json -show_streams file.mkv \| grep codec_name` |
+
+---
+
+## 8. Port Reference
+
+| Service | Port | Protocol |
+|---|---|---|
+| Jellyfin Web UI | 8096 | HTTP |
+| Jellyfin HTTPS | 8920 | HTTPS |
+| DLNA/SSDP | 1900 | UDP multicast |
+| Transmission Web UI | 9091 | HTTP |
+| Transmission peers | 51413 | TCP/UDP |
+| Samba | 445 | TCP |
+
+> All should be on the same network
+
+---
+
+## Accessing Samba services using Android
+
+If you are using Android and would like to access the Samba server, you can use the [MaterialFiles](https://github.com/zhanghai/MaterialFiles) app.
+It is open source, simple and straight forward.
+
+You can go to the hamburger menu > add storage > Samba server.
+It will firstly scan your network for Samba servers but if it is hidden you can add it manualy.
+
+## Scanning ssh devices
+
+If you do have lots of computers on the network, you can use nmap to find their ip to ssh them
+
+nmap -p 22 --open -sV 192.168.1.0/24
