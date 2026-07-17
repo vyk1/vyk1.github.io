@@ -33,7 +33,15 @@ export default function Header({ lang, currentPath }: HeaderProps) {
             {item.title}
           </Link>
         ))}
-        <a href={`/cv/victoria-botelho-martins-${lang}.pdf`} download>
+        {/* iOS Safari ignora o atributo `download` em PDFs e abre o viewer
+            nativo por cima da página inteira — target="_blank" garante que
+            isso acontece numa aba nova, sem perder o site (nav incluído). */}
+        <a
+          href={`/cv/victoria-botelho-martins-${lang}.pdf`}
+          download
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {dict.nav.downloadPdf}
         </a>
         <Link href={localizedPath(currentPath, otherLang)}>{otherLang.toUpperCase()}</Link>

@@ -84,21 +84,24 @@ export function getFeaturedProjects(): Project[] {
   return featured.length > 0 ? featured : all.slice(0, 3);
 }
 
-export function getAllExperience(): Experience[] {
+export function getAllExperience(lang: "pt" | "en" = "pt"): Experience[] {
   const experienceDir = path.join(CONTENT_DIR, "experience");
   const files = fs.readdirSync(experienceDir).filter((file) => file.endsWith(".mdx"));
 
+  // Frontmatter tem os campos em PT + variantes opcionais `*_en` — cai pro PT
+  // se a tradução ainda não existir, em vez de quebrar.
   const experience = files.map((file) => {
     const slug = file.replace(/\.mdx$/, "");
     const { data } = matter(fs.readFileSync(path.join(experienceDir, file), "utf8"));
+    const en = lang === "en";
 
     return {
       slug,
-      company: data.company,
-      role: data.role,
+      company: (en && data.company_en) || data.company,
+      role: (en && data.role_en) || data.role,
       startDate: data.startDate ? String(data.startDate) : null,
       endDate: data.endDate ? String(data.endDate) : null,
-      highlights: data.highlights ?? [],
+      highlights: (en && data.highlights_en) || data.highlights || [],
       stack: data.stack ?? [],
     } satisfies Experience;
   });

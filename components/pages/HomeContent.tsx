@@ -1,36 +1,24 @@
 import Image from "next/image";
-import Link from "next/link";
-import Mdx from "@/components/Mdx";
 import PageShell from "@/components/PageShell";
 import Hero from "@/components/Hero";
-import Skills from "@/components/Skills";
-import ProjectCard from "@/components/ProjectCard";
 import ExperienceTimeline from "@/components/ExperienceTimeline";
-import Publications from "@/components/Publications";
 import { getDictionary, type Lang } from "@/lib/i18n";
-import {
-  getAllExperience,
-  getFeaturedProjects,
-  getPublications,
-  getSkills,
-  getSobreContent,
-} from "@/lib/content";
+import { getAllExperience } from "@/lib/content";
 import styles from "../../app/page.module.css";
 
 export default async function HomeContent({ lang }: { lang: Lang }) {
   const dict = getDictionary(lang);
-  const basePath = lang === "en" ? "/en/projetos" : "/projetos";
   const currentPath = lang === "en" ? "/en" : "/";
 
-  const featuredProjects = getFeaturedProjects();
-  const skills = getSkills();
-  const experience = getAllExperience();
-  const publications = await getPublications();
-  const sobreContent = getSobreContent(lang);
+  const experience = getAllExperience(lang);
 
   return (
     <PageShell lang={lang} currentPath={currentPath}>
       <Hero lang={lang} />
+      <section id="experiencia" className={styles.section}>
+        <h2 className={styles.sectionTitle}>{dict.sections.experiencia}</h2>
+        <ExperienceTimeline items={experience} />
+      </section>
 
       <section className={styles.bottom}>
         <div className={styles.bottomImage}>

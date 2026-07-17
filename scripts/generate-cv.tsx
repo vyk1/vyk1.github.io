@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
 
 function CvDocument({ lang }: { lang: Lang }) {
   const dict = getDictionary(lang);
-  const experience = getAllExperience();
+  const experience = getAllExperience(lang);
   const projects = getAllProjects().slice(0, 6);
   const skills = getSkills();
 
