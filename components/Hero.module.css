@@ -1,0 +1,108 @@
+.hero {
+  position: relative;
+  padding-top: 36px;
+  /* O mockup original é de 760px — vale só pra este bloco (Hero), não pro
+     container do site inteiro (esse é o --container-narrow, mais largo). */
+  max-width: var(--container-hero);
+  margin: 0 auto;
+}
+
+.bgCrease {
+  position: absolute;
+  top: 40px;
+  right: -40px;
+  width: 320px;
+  height: 320px;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.heroBody {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.heroText {
+  flex: 1;
+  min-width: 260px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.heroText h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  color: var(--color-text);
+}
+
+.role {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.desc {
+  font-size: 14px;
+  color: #c9c9c4;
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 2px;
+}
+
+.primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+}
+
+.ghost {
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.ghost:hover {
+  color: var(--color-text);
+}
+
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 56px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-divider);
+  flex-wrap: wrap;
+}
+
+.stat b {
+  display: block;
+  font-size: 22px;
+  color: var(--color-text);
+}
+
+.stat span {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}

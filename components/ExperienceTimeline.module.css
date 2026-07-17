@@ -1,0 +1,58 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.item {
+  border-left: 2px solid var(--color-border);
+  padding-left: 20px;
+}
+
+.range {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--color-accent);
+}
+
+.item h3 {
+  font-size: 18px;
+  margin: 6px 0 2px;
+  color: var(--color-text);
+}
+
+.company {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.highlights {
+  list-style: none;
+  font-size: 14px;
+  color: #c9c9c4;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.highlights li::before {
+  content: "— ";
+  color: var(--color-text-secondary);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stackTag {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 4px 10px;
+}
