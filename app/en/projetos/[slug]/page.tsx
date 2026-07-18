@@ -8,12 +8,12 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const project = getProjectBySlug(params.slug);
+  const project = getProjectBySlug(params.slug, "en");
   return { title: project ? `${project.title} | Victoria Botelho Martins` : "Project" };
 }
 
 export default function ProjectPageEn({ params }: { params: { slug: string } }) {
-  const project = getProjectBySlug(params.slug);
+  const project = getProjectBySlug(params.slug, "en");
   if (!project) notFound();
 
   return <ProjectDetailContent lang="en" project={project} />;

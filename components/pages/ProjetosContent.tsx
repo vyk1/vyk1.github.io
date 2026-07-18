@@ -6,7 +6,7 @@ import styles from "../../app/projetos/page.module.css";
 
 export default function ProjetosContent({ lang }: { lang: Lang }) {
   const dict = getDictionary(lang);
-  const projects = getAllProjects();
+  const projects = getAllProjects(lang);
   const basePath = lang === "en" ? "/en/projetos" : "/projetos";
   const currentPath = lang === "en" ? "/en/projetos" : "/projetos";
 

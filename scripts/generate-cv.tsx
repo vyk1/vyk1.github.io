@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 function CvDocument({ lang }: { lang: Lang }) {
   const dict = getDictionary(lang);
   const experience = getAllExperience(lang);
-  const projects = getAllProjects().slice(0, 6);
+  const projects = getAllProjects(lang);
   const skills = getSkills();
 
   return (
@@ -142,7 +142,7 @@ function CvDocument({ lang }: { lang: Lang }) {
           ))}
         </View>
 
-        <Text style={styles.sectionTitle}>{dict.sections.projetosDestaque}</Text>
+        <Text style={styles.sectionTitle}>{dict.projetosPage.title}</Text>
         {projects.map((project) => (
           <View key={project.slug} wrap={false}>
             <Text style={styles.itemTitle}>{project.title}</Text>

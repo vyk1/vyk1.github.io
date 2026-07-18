@@ -44,7 +44,10 @@ const resolveAsset = (slug: string, relativePath: string | undefined | null) => 
   return `/projects/${slug}/${filename}`;
 };
 
-export function getAllProjects(): Project[] {
+// Campos que não mudam por idioma (stack, links, mídia, ordem) sempre vêm do
+// index.mdx canônico (PT). title/description/corpo vêm do index.en.mdx quando
+// `lang === "en"` e o arquivo existir — cai pro PT (index.mdx) se não existir.
+export function getAllProjects(lang: "pt" | "en" = "pt"): Project[] {
   const projectsDir = path.join(CONTENT_DIR, "projects");
   const slugs = fs.readdirSync(projectsDir).filter((entry) =>
     fs.statSync(path.join(projectsDir, entry)).isDirectory()
@@ -56,10 +59,22 @@ export function getAllProjects(): Project[] {
     const image = resolveAsset(slug, data.image);
     const demoUrl = resolveAsset(slug, data.demo);
 
+    let title = data.title;
+    let description = data.description ?? "";
+    let body = content;
+
+    const enFilePath = path.join(projectsDir, slug, "index.en.mdx");
+    if (lang === "en" && fs.existsSync(enFilePath)) {
+      const en = matter(fs.readFileSync(enFilePath, "utf8"));
+      title = en.data.title ?? title;
+      description = en.data.description ?? description;
+      body = en.content;
+    }
+
     return {
       slug,
-      title: data.title,
-      description: data.description ?? "",
+      title,
+      description,
       stack: data.stack ?? [],
       image,
       demo: demoUrl ? { url: demoUrl, extension: (data.demo as string).split(".").pop() ?? "" } : null,
@@ -67,19 +82,19 @@ export function getAllProjects(): Project[] {
       liveUrl: data.liveUrl ?? null,
       featured: data.featured ?? false,
       order: data.order ?? 0,
-      body: content,
+      body,
     } satisfies Project;
   });
 
   return projects.sort((a, b) => a.order - b.order);
 }
 
-export function getProjectBySlug(slug: string): Project | null {
-  return getAllProjects().find((project) => project.slug === slug) ?? null;
+export function getProjectBySlug(slug: string, lang: "pt" | "en" = "pt"): Project | null {
+  return getAllProjects(lang).find((project) => project.slug === slug) ?? null;
 }
 
-export function getFeaturedProjects(): Project[] {
-  const all = getAllProjects();
+export function getFeaturedProjects(lang: "pt" | "en" = "pt"): Project[] {
+  const all = getAllProjects(lang);
   const featured = all.filter((project) => project.featured);
   return featured.length > 0 ? featured : all.slice(0, 3);
 }
