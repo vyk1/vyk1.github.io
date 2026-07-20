@@ -1,9 +1,9 @@
-name: Gatsby Build and Deploy
+name: Next.js Build and Deploy
 
 on:
   push:
     branches:
-      - main  # Defina a branch que desencadeará o workflow (por exemplo, main ou master)
+      - main
 
 jobs:
   build-and-deploy:
@@ -11,21 +11,21 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '18.x'
+          node-version: "20"
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build Gatsby
+      - name: Build (static export)
         run: npm run build
-        
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./out
