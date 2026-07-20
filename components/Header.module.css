@@ -1,0 +1,31 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  gap: 10px 18px;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
+.links a {
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease;
+}
+
+.links a:hover {
+  color: var(--color-text);
+}

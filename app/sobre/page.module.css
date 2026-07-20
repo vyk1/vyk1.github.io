@@ -1,0 +1,30 @@
+.title {
+  font-size: 28px;
+  padding-bottom: 16px;
+  margin: 48px 0 32px;
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.prose {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
+  color: #c9c9c4;
+  max-width: 640px;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.prose p {
+  margin-bottom: 18px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.prose a {
+  color: var(--color-accent);
+  font-weight: 500;
+}

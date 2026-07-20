@@ -1,0 +1,27 @@
+.header {
+  margin: 48px 0 32px;
+}
+
+.header h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+.prose {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #c9c9c4;
+  max-width: 640px;
+}
+
+.prose a {
+  color: var(--color-accent);
+}

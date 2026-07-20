@@ -1,0 +1,15 @@
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list a {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.list a:hover {
+  color: var(--color-accent);
+}
