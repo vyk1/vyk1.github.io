@@ -1,0 +1,5 @@
+# URLs antigas do site em Gatsby (/projects/*) agora vivem em /projetos/*
+/en/projects/*  /en/projetos/:splat  301!
+/en/projects    /en/projetos/        301!
+/projects/*     /projetos/:splat     301!
+/projects       /projetos/           301!
