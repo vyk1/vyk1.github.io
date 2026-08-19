@@ -16,7 +16,7 @@
 
 .media {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 16 / 9;
   /* covers dos projetos são logos com fundo transparente/branco, feitos pra
      ficar sobre claro — fundo escuro faz logo escuro "sumir" (preto no preto) */
   background: #f5f5f0;
