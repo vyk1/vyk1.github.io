@@ -60,7 +60,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       stats: [
         { value: "19k+", label: "inconsistências/mês processadas" },
         { value: "R$3M", label: "em correções desde o deploy" },
-        { value: "15", label: "processos automatizados (CGE/SC)" },
+        { value: "15", label: "processos automatizados e publicados (CGE/SC)" },
       ],
     },
     sections: {
@@ -92,7 +92,7 @@ export const dictionaries: Record<Lang, Dictionary> = {
       stats: [
         { value: "19k+", label: "inconsistencies/month processed" },
         { value: "R$3M", label: "in corrections since deployment" },
-        { value: "15", label: "automated processes (CGE/SC)" },
+        { value: "15", label: "automated and published processes (CGE/SC)" },
       ],
     },
     sections: {
