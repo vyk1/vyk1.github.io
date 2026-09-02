@@ -24,7 +24,7 @@ export default async function HomeContent({ lang }: { lang: Lang }) {
         <div className={styles.bottomImage}>
           <Image src="/images/fur-on-canvas.jpg" alt="Dalila, Estelar, Freya e Tinininha" fill />
         </div>
-        <p className={styles.bottomCaption}>Dalila, Estelar, Freya and Tinininha - Fur on Canvas, 2025</p>
+        <p className={styles.bottomCaption}>Dalila (w), Estelar (g), Freya (b) and Tinininha (bw) - Fur on Canvas, 2026</p>
       </section>
     </PageShell>
   );
