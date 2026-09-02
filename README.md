@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# vyk1.github.io
 
-## Getting Started
+Portfólio pessoal da Victoria Botelho Martins — Next.js (App Router), export estático, conteúdo em MDX, PT-BR e EN.
 
-First, run the development server:
+Site: https://vyk1.github.io
+
+## Stack
+
+- **Next.js 14** (App Router) com `output: "export"` — gera site 100% estático em `out/`, sem servidor.
+- **MDX** (`gray-matter` + `next-mdx-remote`) para o conteúdo de projetos, posts, experiência e páginas.
+- **react-pdf** para gerar o currículo em PDF a partir dos mesmos dados de `content/`.
+- CSS Modules, sem framework de UI.
+
+## Rodando localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre em [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Estrutura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/            rotas (App Router) — PT na raiz, EN espelhado em app/en/*
+components/     componentes de UI e components/pages/*Content.tsx (conteúdo de cada rota)
+content/        MDX + frontmatter: projects/, posts/, experience/, pages/
+lib/            leitura de content/ (content.ts), i18n (i18n.ts), formatação (format.ts)
+public/         assets estáticos — imagens de projetos em public/projects/<slug>/
+scripts/        generate-cv.tsx (currículo em PDF) e generate-redirects.mjs (redirects pós-build)
+```
 
-## Learn More
+## Conteúdo
 
-To learn more about Next.js, take a look at the following resources:
+Cada projeto vive em `content/projects/<slug>/index.mdx` (canônico, PT) e opcionalmente
+`index.en.mdx` (título/descrição/corpo em EN — os demais campos do frontmatter, como stack e
+links, são sempre lidos do `.mdx` em PT). Imagens/vídeos referenciados no frontmatter (`image`,
+`demo`) resolvem para `public/projects/<slug>/<arquivo>`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Posts (`content/posts/*.mdx`) e experiência (`content/experience/*.mdx`) seguem o mesmo padrão
+de frontmatter + corpo em Markdown. Ver `lib/content.ts` para os campos esperados de cada tipo.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| comando               | o que faz                                                        |
+| ---------------------- | ----------------------------------------------------------------- |
+| `npm run dev`           | servidor de desenvolvimento                                       |
+| `npm run build`         | export estático (`next build` → `out/`) + `postbuild` (redirects) |
+| `npm run lint`          | ESLint                                                             |
+| `npm run generate:cv`   | gera `public/cv/*.pdf` (PT/EN) a partir de `content/`             |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Push em `main` dispara o workflow [`.github/workflows/gatsby-build-deploy.yml`](.github/workflows/gatsby-build-deploy.yml)
+(nome legado de quando o site era em Gatsby), que builda e publica `out/` na branch `gh-pages`
+via `peaceiris/actions-gh-pages` — servido em `vyk1.github.io` pelo GitHub Pages.
+
+URLs antigas (`/projects/<slug>/`, de antes da migração pra Next.js) continuam funcionando: o
+`postbuild` (`scripts/generate-redirects.mjs`) gera stubs estáticos que redirecionam pra
+`/projetos/<slug>/`, já que GitHub Pages não suporta redirects no servidor.
